@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maga Channel Smasher - YouTube Channel Filter</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        width: 300px;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      input[type="text"] {
+        background-color: #000;
+        color: #fff;
+        width: 90%;
+        margin: 5px 0;
+        padding: 5px;
+      }
+      button {
+        width: 100px;
+        padding: 10px;
+        background-color: #0077aa;
+        border-radius: 4px;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+        margin-top: 15px;
+      }
+      li {
+        margin: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-link {
+        color: gray;
+        float: right;
+        margin-bottom: 20px;
+      }
+      .footer-image {
+        float: right;
+        filter: grayscale(100%);
+        
+      }
+
+      .footer-image:hover {
+        float: right;
+        filter: grayscale(0%);
+        
+      }
+
+      .orange-text{
+        color: orange;
+      }
+      #blockedChannelsListContainer{
+        background-color: #111;
+        overflow-y:auto;
+        margin-bottom: 20px;
+        border-radius: 4px;
+
+        flex-basis: 300px;
+        max-height: 280px
+      }
+      #blockedChannelsList{
+        padding-top: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .remove-btn {
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .disabled-btn {
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color: #afafaf;
+      }
+      .bad-text{
+        color: red;
+      }
+      .friend-text{
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span class="bad-text">MAGA</span> Channel<span class="friend-text">Smasher</span></h1>
+    <hr>
+    <div style="display : flex">
+    <img src="./icons/icons8-youtube-48.png"/>
+    <h3 style="width: 160px;">YouTube Channel Filter</h3>
+  </div>
+
+    <input type="text" id="channelInput" placeholder="Add channel name" />
+    <button id="addChannelBtn">Add Channel</button>
+    
+    <h3 class="bad-text">Blocked Channels</h3>
+    <div id="blockedChannelsListContainer">
+      <ul id="blockedChannelsList">
+    </div>
+
+    <footer>
+      <a class="footer-link" href="https://codebycandle.com" target="_blank" rel="noopener">
+        <img class="footer-image" src="./images/logo-text.png" width="25%" height="25%"/>
+      </a>
+    </footer>
+    <script src="./js/popup.js"></script>
+  </body>
+</html>
