@@ -1,5 +1,22 @@
 // #region VARIABLE
-const DEFAULT_CHANNEL_BLACKLIST = ["Fox News", "Fox Business"];
+const DEFAULT_CHANNEL_BLACKLIST = [
+  "Fox News",
+  "Fox Business",
+  "LiveNOW from FOX",
+  "Ben Shapiro",
+  "JRE Clips",
+  "PowerfulJRE",
+  "PBD Podcast",
+  "Adin Live",
+  "The Andrew Shulz",
+  "FLAGRANT",
+  "NELK",
+  "Logan Paul",
+  "Lex Fridman",
+  "Shawn Ryan Show",
+  "Theo Von",
+  "Candace Owens",
+];
 
 const BLOCKED_CHANNELS = "blockedChannels";
 const GET_BLOCKED_CHANNELS = "getBlockedChannels";
@@ -8,16 +25,12 @@ const UPDATE_BLOCKED_CHANNELS = "updateBlockedChannels";
 
 // #region SHARE DATA
 chrome.storage.sync.set({ defaultChannelBlacklist: DEFAULT_CHANNEL_BLACKLIST });
-chrome.storage.sync.set({ getBlockedChannels: GET_BLOCKED_CHANNELS });
-chrome.storage.sync.set({ updateBlockedChannels: UPDATE_BLOCKED_CHANNELS });
 // #endregion
 
 // #region LISTENER
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.get(BLOCKED_CHANNELS, (result) => {
-    if (!result.blockedChannels) {
-      chrome.storage.local.set({ blockedChannels: [] });
-    }
+    chrome.storage.local.set({ blockedChannels: DEFAULT_CHANNEL_BLACKLIST });
   });
 });
 

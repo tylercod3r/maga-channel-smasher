@@ -32,24 +32,8 @@ function updateBlockedChannelsList() {
     (blockedChannels) => {
       // clear list before updating
       blockedChannelsList.innerHTML = "";
-
-      // add 'default' channels
-      defaultChannelBlackList.forEach((channel) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-        <span style="padding-right: 10px;">${channel}</span>
-        <button class="remove-btn disabled-btn">${DEFAULT_BUTTON_LABEL}</button>
-      `;
-
-        blockedChannelsList.appendChild(li);
-      });
-
       // add 'user' channels
-      for (
-        let i = 0 /*defaultChannelBlackList.length*/;
-        i < blockedChannels.length;
-        i++
-      ) {
+      for (let i = 0; i < blockedChannels.length; i++) {
         let channel = blockedChannels[i];
         const li = document.createElement("li");
         li.innerHTML = `

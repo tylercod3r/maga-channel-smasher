@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "https://www.youtube.com/results?search_query=fox+news",
+      "runtimeArgs": ["--load-extension=${workspaceFolder}"]
+    }
+  ]
+}
